@@ -1,8 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import styled from "styled-components";
 import { increaseExpAndLevel } from "../../function/Exp";
+import ReactMarkdown from "react-markdown";
+import styled from "styled-components";
 import PostSkeleton from '../../components/main/PostSkeleton.jsx';
 import PrevButton from "/assets/Icon/navigate_before.svg";
 import Heart from "/assets/Icon/heart-gray.svg";
@@ -323,7 +324,7 @@ const Post = () => {
                     <ImageInner>
                         {post.post_images.length > 0 ? post.post_images.map((image, index) => (
                             <Image src={image} key={index}/>
-                        )) : <Image src={"/assets/BG/defaultImage.png"} />}
+                        )) : <Image src={"/assets/BG/defaultImage_m.png"} />}
 
                     </ImageInner>
                 </ImageSlider>
@@ -401,7 +402,10 @@ const Post = () => {
                         <ShareResultMessage $iscopy={isCopy}>복사되었습니다</ShareResultMessage>
                     </Share>
                 </ContentTop>
-                <ContentMiddle>{post.post_content}</ContentMiddle>
+
+                <ContentMiddle>
+                    <ReactMarkdown>{post.post_content}</ReactMarkdown>
+                </ContentMiddle>
                 <SubmitArea>
                     <HeartIcon src={isInteresting ? HeartBlack : Heart}
                                 onClick={handleHeartClick} />
@@ -561,6 +565,7 @@ const ContentMiddle = styled.div`
     color: #676767;
     font-size: 12px;
     overflow-y: scroll;
+    white-space: pre-line;
 `;
 
 const TitleAndImg =styled.div`

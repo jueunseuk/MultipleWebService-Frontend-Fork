@@ -238,8 +238,8 @@ const UserMain = () => {
                     <ModalContent>
                         <ModalTitle>정말로 회원탈퇴를 진행하시겠습니까?</ModalTitle>
                         <ButtonGroup>
-                            <ConfirmButton onClick={handleSecessionClick}>확인</ConfirmButton>
-                            <CancelButton onClick={handleSecessionCancel}>취소</CancelButton>
+                            <ConfirmButton onClick={handleSecessionClick}>네</ConfirmButton>
+                            <CancelButton onClick={handleSecessionCancel}>아니요</CancelButton>
                         </ButtonGroup>
                     </ModalContent>
                 </ModalOverlay>
@@ -253,7 +253,7 @@ const UserMain = () => {
                                 value={password}
                                 onChange= {handlePasswordChange}/>
                         <ButtonGroup>
-                            <ConfirmButton onClick={handlePasswordSubmit}>확인</ConfirmButton>
+                            <ConfirmButton onClick={handlePasswordSubmit}>입력</ConfirmButton>
                             <CancelButton onClick={() => {setShowPasswordModal(false)}}>취소</CancelButton>
                         </ButtonGroup>
                     </ModalContent>
@@ -358,19 +358,19 @@ const ProfileAreaRight = styled.div`
 `;
 
 const Secession = styled.div`
-    font-size: 12px;
+    font-size: 10px;
     color: #ff7474;
     font-weight: 400;
     
-    width: 180px;
-    height: 40px;
+    width: 118px;
+    height: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
     box-shadow: 0px 1px 4px rgba(116, 116, 116, 0.2);
     border-radius: 39px;
-    margin-top: 13px;
+    margin-top: 10px;
     margin-bottom: 20px;
 
     &:hover{
@@ -395,37 +395,64 @@ const ModalOverlay = styled.div`
 const ModalContent = styled.div`
   background: white;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 15px;
   text-align: center;
-  max-width: 350px;
   width: 100%;
+  max-width: 280px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const ModalTitle = styled.div`
   margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 500;
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 10px;
 `;
 
 const ConfirmButton = styled.button`
-  background-color: red;
-  color: white;
+  background-color: #f3f3f3;
+  color: #242424;
   border: none;
   padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 4px;
+  border-radius: 8px;
+  width: 80px;
+  height: 40px;
+
+  &:hover{
+        cursor: pointer;
+        background-color: #FFDBDB;
+        color: #F33C3C;
+        border: 1px solid #F33C3C;
+        transition: 0.1s;
+    }
 `;
 
 const CancelButton = styled.button`
-  background-color: gray;
-  color: white;
+  background-color: #f3f3f3;
+  color: #242424;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 8px;
+  width: 80px;
+  height: 40px;
+
+  &:hover{
+        cursor: pointer;
+        background-color: #FFDBDB;
+        color: #F33C3C;
+        border: 1px solid #F33C3C;
+        transition: 0.1s;
+    }
 `;
 
 const Input = styled.input`
@@ -436,11 +463,12 @@ const Input = styled.input`
     height: 30px;
     width: 200px;
     text-align: center;
+    margin: 0 auto;
 `;
 
 const GoogleLinkButton = styled.div`
-    width: 180px;
-    height: 40px;
+    width: 118px;
+    height: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -448,7 +476,7 @@ const GoogleLinkButton = styled.div`
     box-shadow: 0px 1px 4px rgba(116, 116, 116, 0.2);
     border-radius: 39px;
     margin-top: 13px;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 400;
     color: #404041;
 

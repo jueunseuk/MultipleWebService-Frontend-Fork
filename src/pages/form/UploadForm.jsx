@@ -134,7 +134,7 @@ const UploadForm = () => {
                 room_parti: [currentUser.user_id],
                 room_lastMessage: "최근 대화 내역이 존재하지 않습니다",
                 room_lastMessagedat: new Date().toISOString(),
-                room_thumbnail: uploadedImageUrls[0] || "/assets/BG/defaultImage.png",
+                room_thumbnail: uploadedImageUrls[0] || "/assets/BG/defaultImage_m.png",
                 messages: {},
             });
 
@@ -305,14 +305,14 @@ const CategoryList = styled.div`
 const Title = styled.div`
     font-size: 16px;
     font-weight: bold;
-    margin-left: 132px;
+    margin-left: 122px;
 `;
 
 const Form = styled.form``;
 
 const SettingSubject = styled.div`
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
     margin: 30px 0 13px 23px;
 `;
 
@@ -387,10 +387,12 @@ const TitleInputArea = styled.input.attrs({
     background-color: #F8F8F8;
     border-radius: 7px;
     outline: none;
-    font-size: 13px;
+    font-family: "Pretendard";
+    font-size: 12px;
+    font-weight: 300;
 
     &::placeholder{
-        font-size: 13px;
+        font-size: 12px;
         color: #BCBEC0;
     }
 `;
@@ -399,9 +401,11 @@ const ContentInputArea = styled.textarea.attrs({
     type: "text",
     id: "content",
     name: "content",
-    placeholder: "상세 정보를 입력해주세요",
+    placeholder: "상세 정보를 입력해주세요 (마크다운 문법 지원)",
     required: "required"
 })`
+    font-family: "Pretendard";
+    font-weight: 300;
     width: 346px;
     height: 220px;
     resize: none;
@@ -411,10 +415,10 @@ const ContentInputArea = styled.textarea.attrs({
     background-color: #F8F8F8;
     border-radius: 7px;
     outline: none;
-    font-size: 11px;
+    font-size: 12px;
 
     &::placeholder{
-        font-size: 11px;
+        font-size: 12px;
         color: #BCBEC0;
     }
 `;
